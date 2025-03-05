@@ -1,0 +1,52 @@
+html, body{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+body {
+    font-family: 'Lora', serif;
+    background-color: #fff;
+    color: #000;
+}
+
+.navbar {
+    border-bottom: 1px solid #ddd;
+}
+
+.navbar-brand, .nav-link {
+    font-family: 'Playfair Display', serif;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.btn-custom {
+    background: transparent;
+    border: 1px solid #000;
+    color: #000;
+    transition: all 0.3s ease;
+}
+
+.btn-custom:hover {
+    background: #000;
+    color: #fff;
+}
+
+.card {
+    border: 1px solid #ddd;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.card-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 18px;
+}
+
+main{
+    flex: 1;
+}
+
+.footer {
+    border-top: 1px solid #ddd;
+    background-color: #f8f9fa;
+}

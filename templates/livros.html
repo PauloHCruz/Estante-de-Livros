@@ -1,0 +1,23 @@
+{% extends "index.html" %}
+
+{% block titulo %}Livros disponiveis{% endblock titulo %}
+
+{% block conteudo %}
+<h2 class="text-center mb-4" style="font-family: 'Playfair Display', serif;">Livros Disponíveis</h2>
+<div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5 g-4">
+
+    <div class="col">
+        <div class="card h-100">
+            <img src="https://m.media-amazon.com/images/I/91jCDEyM3fL.jpg" class="card-img-top" alt="Capa do Livro">
+            <div class="card-body text-center">
+                <h5 class="card-title">Nome do Livro</h5>
+                <p class="card-text">Autor: Nome do Autor</p>
+            </div>
+            <div class="card-footer text-center">
+                <button class="btn btn-custom">Adicionar à Minha Estante</button>
+            </div>
+        </div>
+    </div>
+
+</div>
+{% endblock conteudo %}
