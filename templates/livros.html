@@ -1,7 +1,7 @@
 {% extends "index.html" %}
 {% import "macros.html" as macros %}
 
-{% block titulo %}Livros disponiveis{% endblock titulo %}
+{% block titulo %}Livros Disponíveis{% endblock titulo %}
 
 {% block conteudo %}
 <h2 class="text-center mb-4" style="font-family: 'Playfair Display', serif;">Livros Disponíveis</h2>
@@ -15,7 +15,7 @@
 </div>
 <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5 g-4">
     {% for livro in livros %}
-        {{macros.card_livro(livro.imagem, livro.titulo, livro.autor)}}
+        {{ macros.card_livro(livro.id, livro.imagem, livro.titulo, livro.autor, livro.id in minha_estante, minha_estante.get(livro.id, "quero ler")) }}
     {% endfor %}
 </div>
 {% endblock conteudo %}

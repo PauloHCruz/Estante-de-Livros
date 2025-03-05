@@ -1,4 +1,4 @@
-{% macro card_livro(imagem,titulo,autor) %}
+{% macro card_livro(book_id, imagem, titulo, autor, in_shelf, status) %}
 <div class="col">
     <div class="card h-100">
         <img src="{{ imagem }}" class="card-img-top" alt="Capa do Livro">
@@ -7,7 +7,23 @@
             <p class="card-text">{{ autor }}</p>
         </div>
         <div class="card-footer text-center">
-            <button class="btn btn-custom">Adicionar à Minha Estante</button>
+            <form method="post" action="{{ url_for('alterna_estante') }}">
+                <input type="hidden" name="book_id" value="{{ book_id }}">
+                <button type="submit" class="btn {% if in_shelf %}btn-danger{% else %}btn-dark{% endif %}">
+                    {% if in_shelf %}Remover da Estante{% else %}Adicionar à Minha Estante{% endif %}
+                </button>
+            </form>
+
+            {% if in_shelf %}
+            <form method="post" action="{{ url_for('atualiza_status') }}" class="mt-2">
+                <input type="hidden" name="book_id" value="{{ book_id }}">
+                <select name="status" class="form-select form-select-sm" onchange="this.form.submit()">
+                    <option value="quero ler" {% if status == 'quero ler' %}selected{% endif %}>Quero ler</option>
+                    <option value="lendo" {% if status == 'lendo' %}selected{% endif %}>Lendo</option>
+                    <option value="lido" {% if status == 'lido' %}selected{% endif %}>Lido</option>
+                </select>
+            </form>
+            {% endif %}
         </div>
     </div>
 </div>
