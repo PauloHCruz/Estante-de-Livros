@@ -1,0 +1,14 @@
+{% macro card_livro(imagem,titulo,autor) %}
+<div class="col">
+    <div class="card h-100">
+        <img src="{{ imagem }}" class="card-img-top" alt="Capa do Livro">
+        <div class="card-body text-center">
+            <h5 class="card-title">{{ titulo }}</h5>
+            <p class="card-text">{{ autor }}</p>
+        </div>
+        <div class="card-footer text-center">
+            <button class="btn btn-custom">Adicionar à Minha Estante</button>
+        </div>
+    </div>
+</div>
+{% endmacro %}
